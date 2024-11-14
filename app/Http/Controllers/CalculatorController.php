@@ -25,5 +25,3 @@ class CalculatorController extends Controller
         return "The result is: $result.";
     }
 }
-
-

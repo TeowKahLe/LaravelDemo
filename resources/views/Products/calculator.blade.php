@@ -9,16 +9,11 @@
     <h1>Calculator for add only</h1>
 
     <!-- Form to send data to the 'add' method of CalculatorController -->
-    <form action="{{ url('/add') }}" method="POST">
-        @csrf <!-- CSRF token for security -->
-
-        <label for="number1">Number 1:</label>
-        <input type="text" id="number1" name="number1" required><br><br>
-
-        <label for="number2">Number 2:</label>
-        <input type="text" id="number2" name="number2" required><br><br>
-
-        <button type="submit">Calculate</button>
+    <form action="/add" method="post">
+        @csrf <!-- Include CSRF token for security -->
+        <input type="text" name="number1">
+        <input type="text" name="number2">
+        <button type="submit">Add</button>
     </form>
 </body>
 </html>
