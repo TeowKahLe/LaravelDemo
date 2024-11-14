@@ -6,14 +6,19 @@
     <title>Calculator</title>
 </head>
 <body>
-    <h1>Calculator for add only</h1>
+    <h1>Calculator</h1>
 
     <!-- Form to send data to the 'add' method of CalculatorController -->
     <form action="/add" method="post">
         @csrf <!-- Include CSRF token for security -->
-        <input type="text" name="number1">
-        <input type="text" name="number2">
+        <input type="text" name="number1" placeholder="Enter first number" required>
+        <input type="text" name="number2" placeholder="Enter second number" required>
         <button type="submit">Add</button>
     </form>
+
+    <!-- Show the result if it's set -->
+    @isset($result)
+        <h2>Result: {{ $result }}</h2>
+    @endisset
 </body>
 </html>
