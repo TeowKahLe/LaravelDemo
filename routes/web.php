@@ -1,11 +1,8 @@
 <?php
-use App\Http\Controllers\CalculatorController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CartController;
 
-// Display the calculator form
-Route::get('/', function () {
-    return view('calculator');
+Route::prefix('cart')->name('cart.')->group(function () {
+    Route::get('/', [CartController::class, 'index'])->name('index');
+    Route::post('/add', [CartController::class, 'add'])->name('add');
+    Route::delete('/remove/{id}', [CartController::class, 'remove'])->name('remove');
 });
-
-// Handle form submission
-Route::post('/add', [CalculatorController::class, 'add']);
