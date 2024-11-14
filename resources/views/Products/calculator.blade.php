@@ -6,7 +6,7 @@
     <title>Calculator</title>
 </head>
 <body>
-    <h1>Calculator</h1>
+    <h1>Calculator for add only</h1>
 
     <!-- Form to send data to the 'add' method of CalculatorController -->
     <form action="{{ url('/add') }}" method="POST">
